@@ -14,7 +14,7 @@ class StreamOverlayView: UIView {
     @IBOutlet weak var gradientBackgroundView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var gradientLayer: CALayer?
+    private var gradientLayer: CALayer?
     
     // MARK: - Init
     override init(frame: CGRect) {

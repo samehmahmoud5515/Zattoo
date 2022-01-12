@@ -14,13 +14,11 @@ class StreamViewController: UIViewController, StreamViewControllerProtocol {
     
     // MARK: - Outlets
     @IBOutlet weak var playerView: PlayerView!
-    @IBOutlet weak var overlayView: StreamOverlayView!
     
     // MARK: - Attributes
 	var presenter: StreamPresenterProtocol!
     let disposeBag = DisposeBag()
-    let player = AVPlayer()
-    let playerViewTapGesture = UITapGestureRecognizer()
+    weak var player: AVPlayer?
 
     // MARK: -  View Life Cycle
     override func viewDidLoad() {
@@ -33,10 +31,10 @@ class StreamViewController: UIViewController, StreamViewControllerProtocol {
 extension StreamViewController {
     func setupUI() {
         setupPlayer()
-        addPlayerViewTapGesture()
     }
     
     func setupPlayer() {
+        guard let player = player else { return }
         playerView.playerLayer.player = player
         playerView.playerLayer.videoGravity = .resizeAspect
         
@@ -50,45 +48,25 @@ extension StreamViewController {
         player.replaceCurrentItem(with: playerItem)
         player.play()
     }
-    
-    func addPlayerViewTapGesture() {
-        playerView.addGestureRecognizer(playerViewTapGesture)
-    }
-    
-    func showLoadingIndicator(isLoading: Bool) {
-        isLoading ?
-            overlayView.activityIndicator.startAnimating() :
-            overlayView.activityIndicator.stopAnimating()
+}
+
+// MARK: - setup AVAudioSession
+extension StreamViewController {
+    func setupAVAudioSession() {
+        do {
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+            try audioSession.setCategory(.playback)
+        }
+        catch {}
     }
 }
 
 // MARK: - UI Binding
 extension StreamViewController {
     func configureUIBinding() {
-        bindCloseButtonTap()
-        bindResizeButtonTap()
-        bindPlayerViewTapGesture()
         bindPlayerGravityWithVideoGravity()
-        bindShowingLoadingIndicatorWithPlayerState()
-    }
-    
-    func bindCloseButtonTap() {
-        overlayView.closeButton.rx.tap
-            .bind(to: presenter.viewModel.closeButtonDidTapped)
-            .disposed(by: disposeBag)
-    }
-    
-    func bindResizeButtonTap() {
-        overlayView.resizeButton.rx.tap
-            .bind(to: presenter.viewModel.resizeButtonDidTapped)
-            .disposed(by: disposeBag)
-    }
-    
-    func bindPlayerViewTapGesture() {
-        playerViewTapGesture.rx.event.bind(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            self.overlayView.isHidden = !self.overlayView.isHidden
-        }).disposed(by: disposeBag)
+        bindPlayerMutedWithOutputVolume()
     }
     
     func bindPlayerGravityWithVideoGravity() {
@@ -99,18 +77,16 @@ extension StreamViewController {
             }.disposed(by: disposeBag)
     }
     
-    func bindShowingLoadingIndicatorWithPlayerState() {
-        player.rx.timeControlStatus
-            .observe(on: MainScheduler.instance)
-            .map { [weak self] status -> Bool in
-                guard let self = self,
-                      let waitingReason = self.player.reasonForWaitingToPlay
-                else { return false }
-                return status == .waitingToPlayAtSpecifiedRate && waitingReason != .noItemToPlay
-            }
-            .do(onNext: { [weak self] loading  in
+    func bindPlayerMutedWithOutputVolume() {
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        audioSession.rx.outputVolume
+            .startWith(audioSession.outputVolume)
+            .map { $0 == 0.0 }
+            .do(onNext: { [weak self] mute in
                 guard let self = self else {return}
-                self.showLoadingIndicator(isLoading: loading)
+                self.player?.isMuted = mute
             })
             .subscribe()
             .disposed(by: disposeBag)

@@ -78,12 +78,21 @@
 		50AFD07C27826017001B2C84 /* StreamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFD07227826017001B2C84 /* StreamInteractor.swift */; };
 		50AFD07E27826017001B2C84 /* StreamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFD07627826017001B2C84 /* StreamRouter.swift */; };
 		50D38C9127814D2C0010D89A /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D38C9027814D2C0010D89A /* UIView+Shadow.swift */; };
+		50E47D22278E4AEE00154D9F /* StreamContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D14278E4AEE00154D9F /* StreamContainerViewModel.swift */; };
+		50E47D23278E4AEE00154D9F /* StreamContainerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D16278E4AEE00154D9F /* StreamContainerContract.swift */; };
+		50E47D24278E4AEE00154D9F /* StreamContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D18278E4AEE00154D9F /* StreamContainerPresenter.swift */; };
+		50E47D25278E4AEE00154D9F /* StreamContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50E47D1A278E4AEE00154D9F /* StreamContainerViewController.xib */; };
+		50E47D26278E4AEE00154D9F /* StreamContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D1B278E4AEE00154D9F /* StreamContainerViewController.swift */; };
+		50E47D27278E4AEE00154D9F /* StreamContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D1D278E4AEE00154D9F /* StreamContainerInteractor.swift */; };
+		50E47D29278E4AEE00154D9F /* StreamContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D21278E4AEE00154D9F /* StreamContainerRouter.swift */; };
+		50E47D3D278E4BF900154D9F /* UIViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D3C278E4BF900154D9F /* UIViewController+Present.swift */; };
 		50E6C8D927778598002B292F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6C8D827778598002B292F /* AppDelegate.swift */; };
 		50E6C8E227778598002B292F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50E6C8E127778598002B292F /* Assets.xcassets */; };
 		50E6C8E527778598002B292F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50E6C8E327778598002B292F /* LaunchScreen.storyboard */; };
 		50E6C8F027778599002B292F /* ZattooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6C8EF27778599002B292F /* ZattooTests.swift */; };
 		50E6C8FB27778599002B292F /* ZattooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E6C8FA27778599002B292F /* ZattooUITests.swift */; };
-		50F17E17278CFCED006CFE72 /* AVPlayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F17E16278CFCED006CFE72 /* AVPlayer+Rx.swift */; };
+		50F17E17278CFCED006CFE72 /* AVPlayer+RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F17E16278CFCED006CFE72 /* AVPlayer+RxExtension.swift */; };
+		50F17F1A278D131A006CFE72 /* AVAudioSession+RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F17F19278D131A006CFE72 /* AVAudioSession+RxExtension.swift */; };
 		7D1BAC8E9C22A3028BDE2F30 /* Pods_Zattoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6494EAF546A73EA6DC295CA /* Pods_Zattoo.framework */; };
 		FB71BF538FEB8498F9D879FA /* Pods_ZattooTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13BD876509A1915E50AB22E /* Pods_ZattooTests.framework */; };
 /* End PBXBuildFile section */
@@ -179,6 +188,14 @@
 		50AFD07227826017001B2C84 /* StreamInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamInteractor.swift; sourceTree = "<group>"; };
 		50AFD07627826017001B2C84 /* StreamRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamRouter.swift; sourceTree = "<group>"; };
 		50D38C9027814D2C0010D89A /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		50E47D14278E4AEE00154D9F /* StreamContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerViewModel.swift; sourceTree = "<group>"; };
+		50E47D16278E4AEE00154D9F /* StreamContainerContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerContract.swift; sourceTree = "<group>"; };
+		50E47D18278E4AEE00154D9F /* StreamContainerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerPresenter.swift; sourceTree = "<group>"; };
+		50E47D1A278E4AEE00154D9F /* StreamContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StreamContainerViewController.xib; sourceTree = "<group>"; };
+		50E47D1B278E4AEE00154D9F /* StreamContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerViewController.swift; sourceTree = "<group>"; };
+		50E47D1D278E4AEE00154D9F /* StreamContainerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerInteractor.swift; sourceTree = "<group>"; };
+		50E47D21278E4AEE00154D9F /* StreamContainerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerRouter.swift; sourceTree = "<group>"; };
+		50E47D3C278E4BF900154D9F /* UIViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Present.swift"; sourceTree = "<group>"; };
 		50E6C8D527778598002B292F /* Zattoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zattoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E6C8D827778598002B292F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E6C8E127778598002B292F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,7 +207,8 @@
 		50E6C8F627778599002B292F /* ZattooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZattooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E6C8FA27778599002B292F /* ZattooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZattooUITests.swift; sourceTree = "<group>"; };
 		50E6C8FC27778599002B292F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50F17E16278CFCED006CFE72 /* AVPlayer+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Rx.swift"; sourceTree = "<group>"; };
+		50F17E16278CFCED006CFE72 /* AVPlayer+RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+RxExtension.swift"; sourceTree = "<group>"; };
+		50F17F19278D131A006CFE72 /* AVAudioSession+RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioSession+RxExtension.swift"; sourceTree = "<group>"; };
 		57AB86248C2683D01AE11965 /* Pods-Zattoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zattoo.release.xcconfig"; path = "Target Support Files/Pods-Zattoo/Pods-Zattoo.release.xcconfig"; sourceTree = "<group>"; };
 		974E0BD2B1B5BE77B3BB4E6E /* Pods-Zattoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zattoo.debug.xcconfig"; path = "Target Support Files/Pods-Zattoo/Pods-Zattoo.debug.xcconfig"; sourceTree = "<group>"; };
 		9DFFF6635CF4E5D10E28A7AB /* Pods-ZattooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZattooTests.debug.xcconfig"; path = "Target Support Files/Pods-ZattooTests/Pods-ZattooTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +261,7 @@
 		5046A1752777C4040070FB54 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				50E47D12278E4AEE00154D9F /* StreamContainer Module */,
 				50AFD06727826017001B2C84 /* Stream Module */,
 				505F0C332780F9FB0002D978 /* Splash Module */,
 				505F0BF1277FE3020002D978 /* Channels Module */,
@@ -770,7 +789,9 @@
 		508ABA2727810EE400EF6C82 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				50F17E07278CFB28006CFE72 /* PlayerReactiveExtension */,
+				50E47D3B278E4BEB00154D9F /* UIViewController */,
+				50F17F18278D130E006CFE72 /* AVAudioSession */,
+				50F17E07278CFB28006CFE72 /* AVPlayer */,
 				50AFD00B2781F39D001B2C84 /* UIColor */,
 				508ABA2827810EEA00EF6C82 /* UIView */,
 			);
@@ -808,7 +829,6 @@
 		50925481278CDFDF0042F36D /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				5092548E278CE8580042F36D /* StreamOverlayView */,
 				50925485278CDFED0042F36D /* PlayerView */,
 			);
 			path = SubViews;
@@ -901,6 +921,85 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		50E47D12278E4AEE00154D9F /* StreamContainer Module */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D13278E4AEE00154D9F /* ViewModel */,
+				50E47D15278E4AEE00154D9F /* Contract */,
+				50E47D17278E4AEE00154D9F /* Presenter */,
+				50E47D44278E51E100154D9F /* View */,
+				50E47D1C278E4AEE00154D9F /* Interactor */,
+				50E47D20278E4AEE00154D9F /* Router */,
+			);
+			path = "StreamContainer Module";
+			sourceTree = "<group>";
+		};
+		50E47D13278E4AEE00154D9F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D14278E4AEE00154D9F /* StreamContainerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		50E47D15278E4AEE00154D9F /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D16278E4AEE00154D9F /* StreamContainerContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		50E47D17278E4AEE00154D9F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D18278E4AEE00154D9F /* StreamContainerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		50E47D19278E4AEE00154D9F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D1A278E4AEE00154D9F /* StreamContainerViewController.xib */,
+				50E47D1B278E4AEE00154D9F /* StreamContainerViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		50E47D1C278E4AEE00154D9F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D1D278E4AEE00154D9F /* StreamContainerInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		50E47D20278E4AEE00154D9F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D21278E4AEE00154D9F /* StreamContainerRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		50E47D3B278E4BEB00154D9F /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50E47D3C278E4BF900154D9F /* UIViewController+Present.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		50E47D44278E51E100154D9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5092548E278CE8580042F36D /* StreamOverlayView */,
+				50E47D19278E4AEE00154D9F /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		50E6C8CC27778598002B292F = {
 			isa = PBXGroup;
 			children = (
@@ -954,12 +1053,20 @@
 			path = ZattooUITests;
 			sourceTree = "<group>";
 		};
-		50F17E07278CFB28006CFE72 /* PlayerReactiveExtension */ = {
+		50F17E07278CFB28006CFE72 /* AVPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				50F17E16278CFCED006CFE72 /* AVPlayer+Rx.swift */,
+				50F17E16278CFCED006CFE72 /* AVPlayer+RxExtension.swift */,
 			);
-			path = PlayerReactiveExtension;
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		50F17F18278D130E006CFE72 /* AVAudioSession */ = {
+			isa = PBXGroup;
+			children = (
+				50F17F19278D131A006CFE72 /* AVAudioSession+RxExtension.swift */,
+			);
+			path = AVAudioSession;
 			sourceTree = "<group>";
 		};
 		E61FA209F8BEA974390B004E /* Frameworks */ = {
@@ -1083,6 +1190,7 @@
 				50E6C8E527778598002B292F /* LaunchScreen.storyboard in Resources */,
 				505F0C05277FE3020002D978 /* ChannelsViewController.xib in Resources */,
 				505F0C472780F9FC0002D978 /* SplashViewController.xib in Resources */,
+				50E47D25278E4AEE00154D9F /* StreamContainerViewController.xib in Resources */,
 				505F0C1B277FE75C0002D978 /* GroupCell.xib in Resources */,
 				50AFD07B27826017001B2C84 /* StreamViewController.xib in Resources */,
 				50E6C8E227778598002B292F /* Assets.xcassets in Resources */,
@@ -1224,7 +1332,8 @@
 				505F0C03277FE3020002D978 /* ChannelsPresenter.swift in Sources */,
 				505F0B1F277FBEB30002D978 /* Session.swift in Sources */,
 				505F0B70277FCE8E0002D978 /* StreamSessionLocalService.swift in Sources */,
-				50F17E17278CFCED006CFE72 /* AVPlayer+Rx.swift in Sources */,
+				50F17E17278CFCED006CFE72 /* AVPlayer+RxExtension.swift in Sources */,
+				50E47D26278E4AEE00154D9F /* StreamContainerViewController.swift in Sources */,
 				505F0B42277FC10D0002D978 /* UserType.swift in Sources */,
 				505F0C25277FE7770002D978 /* ChannelCell.swift in Sources */,
 				505F0B75277FCE990002D978 /* StreamSessionLocalServiceProtocol.swift in Sources */,
@@ -1236,10 +1345,14 @@
 				505F0B61277FCC0D0002D978 /* UserDefaults.swift in Sources */,
 				508ABA2A27810EF700EF6C82 /* UIView+IBInspectable.swift in Sources */,
 				505F0B29277FC0650002D978 /* LoginSession.swift in Sources */,
+				50E47D23278E4AEE00154D9F /* StreamContainerContract.swift in Sources */,
 				50AFD07E27826017001B2C84 /* StreamRouter.swift in Sources */,
 				50AFD07A27826017001B2C84 /* StreamViewController.swift in Sources */,
+				50E47D24278E4AEE00154D9F /* StreamContainerPresenter.swift in Sources */,
+				50E47D29278E4AEE00154D9F /* StreamContainerRouter.swift in Sources */,
 				505F0B3D277FC0F80002D978 /* Subscription.swift in Sources */,
 				505F0B9F277FDA380002D978 /* Level.swift in Sources */,
+				50E47D27278E4AEE00154D9F /* StreamContainerInteractor.swift in Sources */,
 				508A5515277F5908007AC357 /* EnvironmentProtocol.swift in Sources */,
 				508A551A277F5964007AC357 /* DefaultHeadersProtocol.swift in Sources */,
 				505F0C492780F9FC0002D978 /* SplashLocalizatedStrings.swift in Sources */,
@@ -1251,6 +1364,7 @@
 				505F0B2E277FC0B40002D978 /* User.swift in Sources */,
 				505F0C06277FE3020002D978 /* ChannelsInteractor.swift in Sources */,
 				50E6C8D927778598002B292F /* AppDelegate.swift in Sources */,
+				50F17F1A278D131A006CFE72 /* AVAudioSession+RxExtension.swift in Sources */,
 				508ABA3827811A1800EF6C82 /* GroupUIModel.swift in Sources */,
 				5087BA132781F14300D2DBFE /* WatchURL.swift in Sources */,
 				508A54EB277F5711007AC357 /* StreamSessionRemoteServiceProtocol.swift in Sources */,
@@ -1266,12 +1380,14 @@
 				505F0C1A277FE75C0002D978 /* GroupCell.swift in Sources */,
 				505F0BDB277FDADB0002D978 /* ChannelsRemoteServiceProtocol.swift in Sources */,
 				508ABA32278117EC00EF6C82 /* UIView+Gradient.swift in Sources */,
+				50E47D22278E4AEE00154D9F /* StreamContainerViewModel.swift in Sources */,
 				508A54DB277F56F6007AC357 /* StreamSessionRemoteService.swift in Sources */,
 				508A5510277F585D007AC357 /* Environment.swift in Sources */,
 				50925487278CDFF70042F36D /* PlayerView.swift in Sources */,
 				5087BA012781F0E900D2DBFE /* ChannelStreamResponse.swift in Sources */,
 				50AFD00D2781F3A9001B2C84 /* UIColor.swift in Sources */,
 				50D38C9127814D2C0010D89A /* UIView+Shadow.swift in Sources */,
+				50E47D3D278E4BF900154D9F /* UIViewController+Present.swift in Sources */,
 				505F0C432780F9FC0002D978 /* SplashViewModel.swift in Sources */,
 				505F0C04277FE3020002D978 /* ChannelsViewController.swift in Sources */,
 				505F0B38277FC0E10002D978 /* Service.swift in Sources */,

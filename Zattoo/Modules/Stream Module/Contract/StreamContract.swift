@@ -27,4 +27,5 @@ protocol StreamViewControllerProtocol: AnyObject {
     var presenter: StreamPresenterProtocol!  { get set }
     func setupUI() 
     func configureUIBinding()
+    func setupAVAudioSession()
 }

@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCk-kR-NYi">
-                    <rect key="frame" x="0.0" y="0.0" width="896" height="83"/>
+                    <rect key="frame" x="0.0" y="0.0" width="896" height="103.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PH5-Cy-kW0">
@@ -54,13 +54,14 @@
                 <constraint firstItem="uXZ-eh-ZSr" firstAttribute="centerX" secondItem="OWo-80-W78" secondAttribute="centerX" id="1EX-9e-H01"/>
                 <constraint firstItem="wCk-kR-NYi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4pO-Il-G3X"/>
                 <constraint firstAttribute="trailing" secondItem="wCk-kR-NYi" secondAttribute="trailing" id="Aed-Ye-gwU"/>
-                <constraint firstItem="wCk-kR-NYi" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="DSS-Go-gc6"/>
+                <constraint firstItem="wCk-kR-NYi" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="DSS-Go-gc6"/>
                 <constraint firstItem="wCk-kR-NYi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="F8w-OX-iuH"/>
                 <constraint firstItem="oY7-3s-Zve" firstAttribute="top" secondItem="PH5-Cy-kW0" secondAttribute="top" id="O9L-FL-Yct"/>
                 <constraint firstItem="PH5-Cy-kW0" firstAttribute="top" secondItem="OWo-80-W78" secondAttribute="top" constant="40" id="cjT-Kt-eFk"/>
                 <constraint firstItem="oY7-3s-Zve" firstAttribute="leading" secondItem="OWo-80-W78" secondAttribute="leading" constant="20" id="gGz-Py-0g4"/>
                 <constraint firstItem="uXZ-eh-ZSr" firstAttribute="top" secondItem="PH5-Cy-kW0" secondAttribute="top" id="yDi-SM-Igp"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-5.3571428571428568" y="-144.92753623188406"/>
         </view>
     </objects>

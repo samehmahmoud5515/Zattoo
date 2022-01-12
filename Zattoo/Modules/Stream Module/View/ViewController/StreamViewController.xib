@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StreamViewController" customModule="Zattoo" customModuleProvider="target">
             <connections>
-                <outlet property="overlayView" destination="Cll-Ux-rJh" id="0OA-Uv-XSf"/>
                 <outlet property="playerView" destination="fdY-h7-d7p" id="kPy-EK-SNK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,19 +21,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-h7-d7p" customClass="PlayerView" customModule="Zattoo" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cll-Ux-rJh" customClass="StreamOverlayView" customModule="Zattoo" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="Cll-Ux-rJh" secondAttribute="trailing" id="8zf-oc-eto"/>
-                        <constraint firstItem="Cll-Ux-rJh" firstAttribute="top" secondItem="fdY-h7-d7p" secondAttribute="top" id="J26-9e-vE7"/>
-                        <constraint firstItem="Cll-Ux-rJh" firstAttribute="leading" secondItem="fdY-h7-d7p" secondAttribute="leading" id="T4b-Wf-0Qg"/>
-                        <constraint firstAttribute="bottom" secondItem="Cll-Ux-rJh" secondAttribute="bottom" id="VLQ-SH-Qic"/>
-                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="bgf-N2-Ukl"/>

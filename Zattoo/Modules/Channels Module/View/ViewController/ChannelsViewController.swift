@@ -19,7 +19,10 @@ class ChannelsViewController: UIViewController, ChannelsViewControllerProtocol {
     // MARK: - Attributes
     var presenter: ChannelsPresenterProtocol!
     let disposeBag = DisposeBag()
-    var numberOfRowsForChannels: CGFloat = 2
+    var numberOfRowsForChannels: CGFloat {
+        return UIDevice.current.orientation.isLandscape ? 4 : 2
+    }
+    var channelCellHeight: CGFloat = 200
     
     // MARK: -  View Life Cycle
     override func viewDidLoad() {
@@ -43,7 +46,16 @@ extension ChannelsViewController {
     
     private func setupNavigationView() {
         navigationController?.isNavigationBarHidden = false
-        navigationItem.title = "Channels"
+        navigationController?.navigationBar.barTintColor = .primaryColor
+        let textAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationItem.title = presenter.viewModel.localization.channels
+        
+        navigationController?.navigationBar.barTintColor = .primaryColor
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
     }
     
     private func registerGroupsCollectionViewCell() {
@@ -73,8 +85,8 @@ extension ChannelsViewController {
         let horizontalInset: CGFloat = 16
         let cellSpacing: CGFloat = 16
         let itemWidth = (channelsCollectionView.bounds.width - ((horizontalInset * 2) + cellSpacing)) / numberOfRowsForChannels
-        layout.itemSize = CGSize(width: itemWidth, height: 280)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: horizontalInset, bottom: 0, right: horizontalInset)
+        layout.itemSize = CGSize(width: itemWidth, height: channelCellHeight)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: horizontalInset, bottom: 40, right: horizontalInset)
         layout.minimumInteritemSpacing = cellSpacing
         layout.minimumLineSpacing = cellSpacing
         channelsCollectionView.setCollectionViewLayout(layout, animated: false)
@@ -144,24 +156,28 @@ extension ChannelsViewController {
 
 extension ChannelsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard collectionView == channelsCollectionView else {
+        guard collectionView == channelsCollectionView,
+              let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout
+        else {
             return UICollectionViewFlowLayout.automaticSize }
+                
+        let marginsAndInsets =
+            flowLayout.sectionInset.left +
+            flowLayout.sectionInset.right +
+            collectionView.safeAreaInsets.left +
+            collectionView.safeAreaInsets.right +
+            flowLayout.minimumInteritemSpacing *
+            CGFloat(numberOfRowsForChannels - 1)
         
-        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
-        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
-        let size: CGFloat = (collectionView.frame.size.width - space) / numberOfRowsForChannels
-        return CGSize(width: size, height: 280)
+        let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(numberOfRowsForChannels)).rounded(.down)
+        return CGSize(width: itemWidth, height: channelCellHeight)
     }
 }
 
-//extension ChannelsViewController {
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        if UIDevice.current.orientation.isLandscape {
-//            numberOfRowsForChannels = 4
-//        } else {
-//            numberOfRowsForChannels = 2
-//        }
-//        channelsCollectionView.reloadData()
-//    }
-//}
+// MARK: - Transition
+extension ChannelsViewController {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        channelsCollectionView.reloadData()
+    }
+}

@@ -9,4 +9,5 @@ import Foundation
 
 struct ChannelsLocalization {
     let all = "All"
+    let channels = "Channels"
 }

@@ -32,14 +32,6 @@ class StreamPresenter: StreamPresenterProtocol {
     func viewDidLoad() {
         viewController?.setupUI() 
         viewController?.configureUIBinding()
-        bindCloseWithCloseButtonDidTapped()
-    }
-    
-    // MARK: - Methods
-    func bindCloseWithCloseButtonDidTapped() {
-        viewModel.closeButtonDidTapped
-            .subscribe { [weak self] _ in
-                self?.router.go(to: .close)
-            }.disposed(by: disposeBag)
+        viewController?.setupAVAudioSession()
     }
 }

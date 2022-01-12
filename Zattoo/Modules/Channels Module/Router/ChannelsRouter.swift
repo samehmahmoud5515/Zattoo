@@ -36,7 +36,7 @@ class ChannelsRouter: ChannelsRouterProtocol {
     func go(to route:ChannelsRoute) {
         switch route {
         case let .stream(channelStream):
-            let streamViewController = StreamRouter.assembleModule(channelStream: channelStream)
+            let streamViewController = StreamContainerRouter.assembleModule(channelStream: channelStream)
             streamViewController.modalPresentationStyle = .overCurrentContext
             viewController?.navigationController?.present(streamViewController, animated: true, completion: nil)
         }

@@ -19,4 +19,8 @@ extension UIColor {
     @nonobjc class var black30: UIColor {
         return UIColor(red: 0, green: 0, blue: 0, alpha: 3)
     }
+    
+    @nonobjc class var primaryColor: UIColor {
+        return UIColor(named: "primaryColor") ?? .white
+    }
 }

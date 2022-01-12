@@ -6,21 +6,28 @@
 //
 
 import UIKit
+import AVFoundation.AVPlayer
+import RxSwift
 
 class StreamRouter: StreamRouterProtocol {
     
     // MARK: - Route
     enum StreamRoute {
-        case close
+        
     }
     
     // MARK: - Attributes
     weak var viewController: UIViewController?
     
     // MARK:- Assemble
-    static func assembleModule(channelStream: ChannelStream) -> UIViewController {
-        let viewModel = StreamViewModel(channelStream: channelStream)
+    static func assembleModule(
+        channelStream: ChannelStream,
+        player: AVPlayer,
+        videoGravity: Observable<AVLayerVideoGravity>) -> UIViewController {
+        
+        let viewModel = StreamViewModel(channelStream: channelStream, videoGravity: videoGravity)
         let view = StreamViewController()
+        view.player = player
         let interactor = StreamInteractor()
         let router = StreamRouter()
         let presenter = StreamPresenter(viewModel: viewModel, viewController: view, interactor: interactor, router: router)
@@ -33,10 +40,6 @@ class StreamRouter: StreamRouterProtocol {
     
     // MARK: - Routing
     func go(to route:StreamRoute) {
-        switch route {
-        case .close:
-            viewController?.dismiss(animated: true)
-        }
     }
 
 }
