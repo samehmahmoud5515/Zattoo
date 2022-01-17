@@ -20,7 +20,6 @@ protocol StreamContainerInteractorProtocol: AnyObject {
 protocol StreamContainerPresenterProtocol: AnyObject {
     func viewDidLoad()
     var viewModel: StreamContainerViewModel { get }
-    func addStream(to view: UIView)
 }
 
 //MARK: - View

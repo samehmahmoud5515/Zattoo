@@ -9,7 +9,7 @@ import AVFoundation
 import RxSwift
 
 extension Reactive where Base: AVAudioSession {
-    public var outputVolume: Observable<Float> {
+    var outputVolume: Observable<Float> {
         return observe(Float.self, #keyPath(AVAudioSession.outputVolume))
             .map { $0 ?? 0.0 }
     }

@@ -25,6 +25,10 @@ class StreamViewController: UIViewController, StreamViewControllerProtocol {
         super.viewDidLoad()
         presenter.viewDidLoad()
     }
+    
+    deinit {
+        print("\(StreamViewController.self) deinit")
+    }
 }
 
 // MARK: - Setup UI

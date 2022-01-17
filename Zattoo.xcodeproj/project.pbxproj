@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4E26280DBFF8E52FEC67FCDD /* Pods_Zattoo_ZattooUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E08784D8079DD8591A22AF /* Pods_Zattoo_ZattooUITests.framework */; };
+		500BF4F127960338008CF9A4 /* AVAsset+RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF4F027960338008CF9A4 /* AVAsset+RxExtension.swift */; };
+		500BF4F727960399008CF9A4 /* AVPlayerItem+RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF4F627960399008CF9A4 /* AVPlayerItem+RxExtension.swift */; };
+		500BF4FF279603F9008CF9A4 /* AVPlayerItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF4FE279603F9008CF9A4 /* AVPlayerItem+Extension.swift */; };
+		500BF55027961912008CF9A4 /* PlayerSettingsUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF54F27961912008CF9A4 /* PlayerSettingsUIModel.swift */; };
+		500BF55627961952008CF9A4 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF55527961952008CF9A4 /* Option.swift */; };
+		500BF55C2796196C008CF9A4 /* VideoQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF55B2796196C008CF9A4 /* VideoQuality.swift */; };
 		5046A1FD2777C6F30070FB54 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046A1FC2777C6F30070FB54 /* APIService.swift */; };
+		5048810A2794E8B7003763F1 /* GradiantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504881092794E8B7003763F1 /* GradiantView.swift */; };
 		505F0B13277FBE890002D978 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F0B12277FBE890002D978 /* SessionResponse.swift */; };
 		505F0B1F277FBEB30002D978 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F0B1E277FBEB30002D978 /* Session.swift */; };
 		505F0B24277FBFAE0002D978 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F0B23277FBFAE0002D978 /* LoginResponse.swift */; };
@@ -66,8 +73,8 @@
 		508ABA32278117EC00EF6C82 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508ABA31278117EC00EF6C82 /* UIView+Gradient.swift */; };
 		508ABA3827811A1800EF6C82 /* GroupUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508ABA3727811A1800EF6C82 /* GroupUIModel.swift */; };
 		50925487278CDFF70042F36D /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50925486278CDFF70042F36D /* PlayerView.swift */; };
-		50925491278CE87D0042F36D /* StreamOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092548F278CE87D0042F36D /* StreamOverlayView.swift */; };
-		50925492278CE87D0042F36D /* StreamOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50925490278CE87D0042F36D /* StreamOverlayView.xib */; };
+		50925491278CE87D0042F36D /* StreamControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5092548F278CE87D0042F36D /* StreamControlsView.swift */; };
+		50925492278CE87D0042F36D /* StreamControlsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50925490278CE87D0042F36D /* StreamControlsView.xib */; };
 		509254B2278CEEE30042F36D /* UIIView+LoadNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509254B1278CEEE30042F36D /* UIIView+LoadNib.swift */; };
 		50AFD00D2781F3A9001B2C84 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFD00C2781F3A9001B2C84 /* UIColor.swift */; };
 		50AFD07727826017001B2C84 /* StreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFD06927826017001B2C84 /* StreamViewModel.swift */; };
@@ -77,6 +84,26 @@
 		50AFD07B27826017001B2C84 /* StreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50AFD07027826017001B2C84 /* StreamViewController.xib */; };
 		50AFD07C27826017001B2C84 /* StreamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFD07227826017001B2C84 /* StreamInteractor.swift */; };
 		50AFD07E27826017001B2C84 /* StreamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AFD07627826017001B2C84 /* StreamRouter.swift */; };
+		50B509CA2792494500023BA2 /* StreamSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509BC2792494500023BA2 /* StreamSettingsViewModel.swift */; };
+		50B509CB2792494500023BA2 /* StreamSettingsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509BE2792494500023BA2 /* StreamSettingsContract.swift */; };
+		50B509CC2792494500023BA2 /* StreamSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509C02792494500023BA2 /* StreamSettingsPresenter.swift */; };
+		50B509CD2792494500023BA2 /* StreamSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B509C22792494500023BA2 /* StreamSettingsViewController.xib */; };
+		50B509CE2792494500023BA2 /* StreamSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509C32792494500023BA2 /* StreamSettingsViewController.swift */; };
+		50B509CF2792494500023BA2 /* StreamSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509C52792494500023BA2 /* StreamSettingsInteractor.swift */; };
+		50B509D02792494500023BA2 /* StreamSettingsLocalizatedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509C72792494500023BA2 /* StreamSettingsLocalizatedStrings.swift */; };
+		50B509D12792494500023BA2 /* StreamSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509C92792494500023BA2 /* StreamSettingsRouter.swift */; };
+		50B509DF279251BA00023BA2 /* StreamSettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B509DD279251BA00023BA2 /* StreamSettingsCell.swift */; };
+		50B509E0279251BA00023BA2 /* StreamSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50B509DE279251BA00023BA2 /* StreamSettingsCell.xib */; };
+		50BF9DD927935CFD003FFAE0 /* StreamSettingsOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DCB27935CFD003FFAE0 /* StreamSettingsOptionsViewModel.swift */; };
+		50BF9DDA27935CFD003FFAE0 /* StreamSettingsOptionsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DCD27935CFD003FFAE0 /* StreamSettingsOptionsContract.swift */; };
+		50BF9DDB27935CFD003FFAE0 /* StreamSettingsOptionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DCF27935CFD003FFAE0 /* StreamSettingsOptionsPresenter.swift */; };
+		50BF9DDC27935CFD003FFAE0 /* StreamSettingsOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DD127935CFD003FFAE0 /* StreamSettingsOptionsViewController.swift */; };
+		50BF9DDD27935CFD003FFAE0 /* StreamSettingsOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BF9DD227935CFD003FFAE0 /* StreamSettingsOptionsViewController.xib */; };
+		50BF9DDE27935CFD003FFAE0 /* StreamSettingsOptionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DD427935CFD003FFAE0 /* StreamSettingsOptionsInteractor.swift */; };
+		50BF9DDF27935CFD003FFAE0 /* StreamSettingsOptionsLocalizatedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DD627935CFD003FFAE0 /* StreamSettingsOptionsLocalizatedStrings.swift */; };
+		50BF9DE027935CFD003FFAE0 /* StreamSettingsOptionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DD827935CFD003FFAE0 /* StreamSettingsOptionsRouter.swift */; };
+		50BF9DF427936064003FFAE0 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BF9DF227936064003FFAE0 /* OptionCell.swift */; };
+		50BF9DF527936064003FFAE0 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50BF9DF327936064003FFAE0 /* OptionCell.xib */; };
 		50D38C9127814D2C0010D89A /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D38C9027814D2C0010D89A /* UIView+Shadow.swift */; };
 		50E47D22278E4AEE00154D9F /* StreamContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D14278E4AEE00154D9F /* StreamContainerViewModel.swift */; };
 		50E47D23278E4AEE00154D9F /* StreamContainerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E47D16278E4AEE00154D9F /* StreamContainerContract.swift */; };
@@ -118,7 +145,14 @@
 		0ADEDA78AA99F5161CCCF9D4 /* Pods-Zattoo-ZattooUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zattoo-ZattooUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zattoo-ZattooUITests/Pods-Zattoo-ZattooUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1A27F76C14AD7B4CAB42E0C1 /* Pods-ZattooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZattooTests.release.xcconfig"; path = "Target Support Files/Pods-ZattooTests/Pods-ZattooTests.release.xcconfig"; sourceTree = "<group>"; };
 		32E08784D8079DD8591A22AF /* Pods_Zattoo_ZattooUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zattoo_ZattooUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		500BF4F027960338008CF9A4 /* AVAsset+RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAsset+RxExtension.swift"; sourceTree = "<group>"; };
+		500BF4F627960399008CF9A4 /* AVPlayerItem+RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+RxExtension.swift"; sourceTree = "<group>"; };
+		500BF4FE279603F9008CF9A4 /* AVPlayerItem+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Extension.swift"; sourceTree = "<group>"; };
+		500BF54F27961912008CF9A4 /* PlayerSettingsUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSettingsUIModel.swift; sourceTree = "<group>"; };
+		500BF55527961952008CF9A4 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		500BF55B2796196C008CF9A4 /* VideoQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoQuality.swift; sourceTree = "<group>"; };
 		5046A1FC2777C6F30070FB54 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		504881092794E8B7003763F1 /* GradiantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradiantView.swift; sourceTree = "<group>"; };
 		505F0B12277FBE890002D978 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		505F0B1E277FBEB30002D978 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		505F0B23277FBFAE0002D978 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -176,8 +210,8 @@
 		508ABA31278117EC00EF6C82 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
 		508ABA3727811A1800EF6C82 /* GroupUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupUIModel.swift; sourceTree = "<group>"; };
 		50925486278CDFF70042F36D /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		5092548F278CE87D0042F36D /* StreamOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamOverlayView.swift; sourceTree = "<group>"; };
-		50925490278CE87D0042F36D /* StreamOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StreamOverlayView.xib; sourceTree = "<group>"; };
+		5092548F278CE87D0042F36D /* StreamControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamControlsView.swift; sourceTree = "<group>"; };
+		50925490278CE87D0042F36D /* StreamControlsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StreamControlsView.xib; sourceTree = "<group>"; };
 		509254B1278CEEE30042F36D /* UIIView+LoadNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIView+LoadNib.swift"; sourceTree = "<group>"; };
 		50AFD00C2781F3A9001B2C84 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		50AFD06927826017001B2C84 /* StreamViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewModel.swift; sourceTree = "<group>"; };
@@ -187,6 +221,26 @@
 		50AFD07027826017001B2C84 /* StreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StreamViewController.xib; sourceTree = "<group>"; };
 		50AFD07227826017001B2C84 /* StreamInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamInteractor.swift; sourceTree = "<group>"; };
 		50AFD07627826017001B2C84 /* StreamRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamRouter.swift; sourceTree = "<group>"; };
+		50B509BC2792494500023BA2 /* StreamSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsViewModel.swift; sourceTree = "<group>"; };
+		50B509BE2792494500023BA2 /* StreamSettingsContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsContract.swift; sourceTree = "<group>"; };
+		50B509C02792494500023BA2 /* StreamSettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsPresenter.swift; sourceTree = "<group>"; };
+		50B509C22792494500023BA2 /* StreamSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StreamSettingsViewController.xib; sourceTree = "<group>"; };
+		50B509C32792494500023BA2 /* StreamSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsViewController.swift; sourceTree = "<group>"; };
+		50B509C52792494500023BA2 /* StreamSettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsInteractor.swift; sourceTree = "<group>"; };
+		50B509C72792494500023BA2 /* StreamSettingsLocalizatedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsLocalizatedStrings.swift; sourceTree = "<group>"; };
+		50B509C92792494500023BA2 /* StreamSettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsRouter.swift; sourceTree = "<group>"; };
+		50B509DD279251BA00023BA2 /* StreamSettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSettingsCell.swift; sourceTree = "<group>"; };
+		50B509DE279251BA00023BA2 /* StreamSettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StreamSettingsCell.xib; sourceTree = "<group>"; };
+		50BF9DCB27935CFD003FFAE0 /* StreamSettingsOptionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsOptionsViewModel.swift; sourceTree = "<group>"; };
+		50BF9DCD27935CFD003FFAE0 /* StreamSettingsOptionsContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsOptionsContract.swift; sourceTree = "<group>"; };
+		50BF9DCF27935CFD003FFAE0 /* StreamSettingsOptionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsOptionsPresenter.swift; sourceTree = "<group>"; };
+		50BF9DD127935CFD003FFAE0 /* StreamSettingsOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsOptionsViewController.swift; sourceTree = "<group>"; };
+		50BF9DD227935CFD003FFAE0 /* StreamSettingsOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StreamSettingsOptionsViewController.xib; sourceTree = "<group>"; };
+		50BF9DD427935CFD003FFAE0 /* StreamSettingsOptionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsOptionsInteractor.swift; sourceTree = "<group>"; };
+		50BF9DD627935CFD003FFAE0 /* StreamSettingsOptionsLocalizatedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsOptionsLocalizatedStrings.swift; sourceTree = "<group>"; };
+		50BF9DD827935CFD003FFAE0 /* StreamSettingsOptionsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamSettingsOptionsRouter.swift; sourceTree = "<group>"; };
+		50BF9DF227936064003FFAE0 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
+		50BF9DF327936064003FFAE0 /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
 		50D38C9027814D2C0010D89A /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		50E47D14278E4AEE00154D9F /* StreamContainerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerViewModel.swift; sourceTree = "<group>"; };
 		50E47D16278E4AEE00154D9F /* StreamContainerContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamContainerContract.swift; sourceTree = "<group>"; };
@@ -258,9 +312,53 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		500BF4EB27960314008CF9A4 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				500BF4F52796038D008CF9A4 /* AVPlayerItem */,
+				500BF4EF27960324008CF9A4 /* AVAsset */,
+				50F17E07278CFB28006CFE72 /* AVPlayer */,
+			);
+			path = AVFoundation;
+			sourceTree = "<group>";
+		};
+		500BF4EF27960324008CF9A4 /* AVAsset */ = {
+			isa = PBXGroup;
+			children = (
+				500BF4F027960338008CF9A4 /* AVAsset+RxExtension.swift */,
+			);
+			path = AVAsset;
+			sourceTree = "<group>";
+		};
+		500BF4F52796038D008CF9A4 /* AVPlayerItem */ = {
+			isa = PBXGroup;
+			children = (
+				500BF4F627960399008CF9A4 /* AVPlayerItem+RxExtension.swift */,
+				500BF4FE279603F9008CF9A4 /* AVPlayerItem+Extension.swift */,
+			);
+			path = AVPlayerItem;
+			sourceTree = "<group>";
+		};
+		500BF55427961947008CF9A4 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				500BF55527961952008CF9A4 /* Option.swift */,
+			);
+			path = Option;
+			sourceTree = "<group>";
+		};
+		500BF55A27961965008CF9A4 /* VideoQuality */ = {
+			isa = PBXGroup;
+			children = (
+				500BF55B2796196C008CF9A4 /* VideoQuality.swift */,
+			);
+			path = VideoQuality;
+			sourceTree = "<group>";
+		};
 		5046A1752777C4040070FB54 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				50BF9DE727935D06003FFAE0 /* StreamSettings */,
 				50E47D12278E4AEE00154D9F /* StreamContainer Module */,
 				50AFD06727826017001B2C84 /* Stream Module */,
 				505F0C332780F9FB0002D978 /* Splash Module */,
@@ -362,6 +460,8 @@
 		505F0B1A277FBE960002D978 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				500BF55A27961965008CF9A4 /* VideoQuality */,
+				500BF55427961947008CF9A4 /* Option */,
 				5087BA1A2781F14E00D2DBFE /* Tracking */,
 				5087BA112781F13B00D2DBFE /* WatchURL */,
 				5087BA082781F11D00D2DBFE /* ChannelStream */,
@@ -791,7 +891,7 @@
 			children = (
 				50E47D3B278E4BEB00154D9F /* UIViewController */,
 				50F17F18278D130E006CFE72 /* AVAudioSession */,
-				50F17E07278CFB28006CFE72 /* AVPlayer */,
+				500BF4EB27960314008CF9A4 /* AVFoundation */,
 				50AFD00B2781F39D001B2C84 /* UIColor */,
 				508ABA2827810EEA00EF6C82 /* UIView */,
 			);
@@ -845,8 +945,9 @@
 		5092548E278CE8580042F36D /* StreamOverlayView */ = {
 			isa = PBXGroup;
 			children = (
-				5092548F278CE87D0042F36D /* StreamOverlayView.swift */,
-				50925490278CE87D0042F36D /* StreamOverlayView.xib */,
+				5092548F278CE87D0042F36D /* StreamControlsView.swift */,
+				50925490278CE87D0042F36D /* StreamControlsView.xib */,
+				504881092794E8B7003763F1 /* GradiantView.swift */,
 			);
 			path = StreamOverlayView;
 			sourceTree = "<group>";
@@ -921,6 +1022,201 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		50B509BA2792494500023BA2 /* StreamSettings Module */ = {
+			isa = PBXGroup;
+			children = (
+				50B509BB2792494500023BA2 /* ViewModel */,
+				50B509BD2792494500023BA2 /* Contract */,
+				50B509BF2792494500023BA2 /* Presenter */,
+				50B509C12792494500023BA2 /* View */,
+				50B509C42792494500023BA2 /* Interactor */,
+				50B509C62792494500023BA2 /* Localization */,
+				50B509C82792494500023BA2 /* Router */,
+			);
+			path = "StreamSettings Module";
+			sourceTree = "<group>";
+		};
+		50B509BB2792494500023BA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				50B509BC2792494500023BA2 /* StreamSettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		50B509BD2792494500023BA2 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				50B509BE2792494500023BA2 /* StreamSettingsContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		50B509BF2792494500023BA2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				50B509C02792494500023BA2 /* StreamSettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		50B509C12792494500023BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50B509DC2792519A00023BA2 /* Cell */,
+				50B509D82792518900023BA2 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50B509C42792494500023BA2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				50B509C52792494500023BA2 /* StreamSettingsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		50B509C62792494500023BA2 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				50B509C72792494500023BA2 /* StreamSettingsLocalizatedStrings.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		50B509C82792494500023BA2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				50B509C92792494500023BA2 /* StreamSettingsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		50B509D82792518900023BA2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50B509C22792494500023BA2 /* StreamSettingsViewController.xib */,
+				50B509C32792494500023BA2 /* StreamSettingsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		50B509DC2792519A00023BA2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				50B509DD279251BA00023BA2 /* StreamSettingsCell.swift */,
+				50B509DE279251BA00023BA2 /* StreamSettingsCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		50BF9DC927935CFD003FFAE0 /* StreamSettingsOptions Module */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DCA27935CFD003FFAE0 /* ViewModel */,
+				50BF9DCC27935CFD003FFAE0 /* Contract */,
+				50BF9DCE27935CFD003FFAE0 /* Presenter */,
+				50BF9DEC27936044003FFAE0 /* View */,
+				50BF9DD327935CFD003FFAE0 /* Interactor */,
+				50BF9DD527935CFD003FFAE0 /* Localization */,
+				50BF9DD727935CFD003FFAE0 /* Router */,
+			);
+			path = "StreamSettingsOptions Module";
+			sourceTree = "<group>";
+		};
+		50BF9DCA27935CFD003FFAE0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DCB27935CFD003FFAE0 /* StreamSettingsOptionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		50BF9DCC27935CFD003FFAE0 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DCD27935CFD003FFAE0 /* StreamSettingsOptionsContract.swift */,
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		50BF9DCE27935CFD003FFAE0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DCF27935CFD003FFAE0 /* StreamSettingsOptionsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		50BF9DD027935CFD003FFAE0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DD127935CFD003FFAE0 /* StreamSettingsOptionsViewController.swift */,
+				50BF9DD227935CFD003FFAE0 /* StreamSettingsOptionsViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		50BF9DD327935CFD003FFAE0 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DD427935CFD003FFAE0 /* StreamSettingsOptionsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		50BF9DD527935CFD003FFAE0 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DD627935CFD003FFAE0 /* StreamSettingsOptionsLocalizatedStrings.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		50BF9DD727935CFD003FFAE0 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DD827935CFD003FFAE0 /* StreamSettingsOptionsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		50BF9DE727935D06003FFAE0 /* StreamSettings */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DC927935CFD003FFAE0 /* StreamSettingsOptions Module */,
+				50B509BA2792494500023BA2 /* StreamSettings Module */,
+			);
+			path = StreamSettings;
+			sourceTree = "<group>";
+		};
+		50BF9DEC27936044003FFAE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DF027936049003FFAE0 /* Cells */,
+				50BF9DD027935CFD003FFAE0 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		50BF9DF027936049003FFAE0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DF127936054003FFAE0 /* LabeledOptionCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		50BF9DF127936054003FFAE0 /* LabeledOptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				50BF9DF227936064003FFAE0 /* OptionCell.swift */,
+				50BF9DF327936064003FFAE0 /* OptionCell.xib */,
+			);
+			path = LabeledOptionCell;
+			sourceTree = "<group>";
+		};
 		50E47D12278E4AEE00154D9F /* StreamContainer Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,6 +1234,7 @@
 			isa = PBXGroup;
 			children = (
 				50E47D14278E4AEE00154D9F /* StreamContainerViewModel.swift */,
+				500BF54F27961912008CF9A4 /* PlayerSettingsUIModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1187,15 +1484,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50BF9DDD27935CFD003FFAE0 /* StreamSettingsOptionsViewController.xib in Resources */,
 				50E6C8E527778598002B292F /* LaunchScreen.storyboard in Resources */,
 				505F0C05277FE3020002D978 /* ChannelsViewController.xib in Resources */,
 				505F0C472780F9FC0002D978 /* SplashViewController.xib in Resources */,
 				50E47D25278E4AEE00154D9F /* StreamContainerViewController.xib in Resources */,
+				50B509CD2792494500023BA2 /* StreamSettingsViewController.xib in Resources */,
+				50B509E0279251BA00023BA2 /* StreamSettingsCell.xib in Resources */,
 				505F0C1B277FE75C0002D978 /* GroupCell.xib in Resources */,
 				50AFD07B27826017001B2C84 /* StreamViewController.xib in Resources */,
+				50BF9DF527936064003FFAE0 /* OptionCell.xib in Resources */,
 				50E6C8E227778598002B292F /* Assets.xcassets in Resources */,
 				505F0C26277FE7770002D978 /* ChannelCell.xib in Resources */,
-				50925492278CE87D0042F36D /* StreamOverlayView.xib in Resources */,
+				50925492278CE87D0042F36D /* StreamControlsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1323,25 +1624,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50BF9DE027935CFD003FFAE0 /* StreamSettingsOptionsRouter.swift in Sources */,
 				5046A1FD2777C6F30070FB54 /* APIService.swift in Sources */,
+				50B509CE2792494500023BA2 /* StreamSettingsViewController.swift in Sources */,
 				505F0BA5277FDA4C0002D978 /* Group.swift in Sources */,
 				505F0B7F277FD9D20002D978 /* Channel.swift in Sources */,
 				505F0C462780F9FC0002D978 /* SplashViewController.swift in Sources */,
 				505F0C01277FE3020002D978 /* ChannelsViewModel.swift in Sources */,
+				50B509DF279251BA00023BA2 /* StreamSettingsCell.swift in Sources */,
+				50BF9DDF27935CFD003FFAE0 /* StreamSettingsOptionsLocalizatedStrings.swift in Sources */,
 				505F0B89277FD9FA0002D978 /* Quality.swift in Sources */,
 				505F0C03277FE3020002D978 /* ChannelsPresenter.swift in Sources */,
+				50BF9DDA27935CFD003FFAE0 /* StreamSettingsOptionsContract.swift in Sources */,
+				500BF4F727960399008CF9A4 /* AVPlayerItem+RxExtension.swift in Sources */,
 				505F0B1F277FBEB30002D978 /* Session.swift in Sources */,
+				50B509CC2792494500023BA2 /* StreamSettingsPresenter.swift in Sources */,
 				505F0B70277FCE8E0002D978 /* StreamSessionLocalService.swift in Sources */,
 				50F17E17278CFCED006CFE72 /* AVPlayer+RxExtension.swift in Sources */,
 				50E47D26278E4AEE00154D9F /* StreamContainerViewController.swift in Sources */,
 				505F0B42277FC10D0002D978 /* UserType.swift in Sources */,
 				505F0C25277FE7770002D978 /* ChannelCell.swift in Sources */,
+				5048810A2794E8B7003763F1 /* GradiantView.swift in Sources */,
+				50B509CF2792494500023BA2 /* StreamSettingsInteractor.swift in Sources */,
 				505F0B75277FCE990002D978 /* StreamSessionLocalServiceProtocol.swift in Sources */,
 				505F0C452780F9FC0002D978 /* SplashPresenter.swift in Sources */,
 				505F0B24277FBFAE0002D978 /* LoginResponse.swift in Sources */,
 				505F0BE0277FDAEB0002D978 /* ChannelsEndPoint.swift in Sources */,
 				50AFD07827826017001B2C84 /* StreamContract.swift in Sources */,
 				505F0B92277FDA120002D978 /* Availability.swift in Sources */,
+				50B509D12792494500023BA2 /* StreamSettingsRouter.swift in Sources */,
 				505F0B61277FCC0D0002D978 /* UserDefaults.swift in Sources */,
 				508ABA2A27810EF700EF6C82 /* UIView+IBInspectable.swift in Sources */,
 				505F0B29277FC0650002D978 /* LoginSession.swift in Sources */,
@@ -1356,30 +1667,40 @@
 				508A5515277F5908007AC357 /* EnvironmentProtocol.swift in Sources */,
 				508A551A277F5964007AC357 /* DefaultHeadersProtocol.swift in Sources */,
 				505F0C492780F9FC0002D978 /* SplashLocalizatedStrings.swift in Sources */,
+				50B509D02792494500023BA2 /* StreamSettingsLocalizatedStrings.swift in Sources */,
 				50AFD07C27826017001B2C84 /* StreamInteractor.swift in Sources */,
-				50925491278CE87D0042F36D /* StreamOverlayView.swift in Sources */,
+				50925491278CE87D0042F36D /* StreamControlsView.swift in Sources */,
+				50BF9DD927935CFD003FFAE0 /* StreamSettingsOptionsViewModel.swift in Sources */,
 				505F0B13277FBE890002D978 /* SessionResponse.swift in Sources */,
 				505F0C4A2780F9FC0002D978 /* SplashRouter.swift in Sources */,
 				505F0B7A277FD98F0002D978 /* ChannelsResponse.swift in Sources */,
 				505F0B2E277FC0B40002D978 /* User.swift in Sources */,
+				50BF9DDE27935CFD003FFAE0 /* StreamSettingsOptionsInteractor.swift in Sources */,
 				505F0C06277FE3020002D978 /* ChannelsInteractor.swift in Sources */,
 				50E6C8D927778598002B292F /* AppDelegate.swift in Sources */,
 				50F17F1A278D131A006CFE72 /* AVAudioSession+RxExtension.swift in Sources */,
 				508ABA3827811A1800EF6C82 /* GroupUIModel.swift in Sources */,
 				5087BA132781F14300D2DBFE /* WatchURL.swift in Sources */,
 				508A54EB277F5711007AC357 /* StreamSessionRemoteServiceProtocol.swift in Sources */,
+				500BF55C2796196C008CF9A4 /* VideoQuality.swift in Sources */,
 				505F0BE5277FE0B20002D978 /* ChannelsServiceError.swift in Sources */,
 				509254B2278CEEE30042F36D /* UIIView+LoadNib.swift in Sources */,
+				50BF9DF427936064003FFAE0 /* OptionCell.swift in Sources */,
 				50AFD07727826017001B2C84 /* StreamViewModel.swift in Sources */,
 				5087BA0A2781F12500D2DBFE /* ChannelStream.swift in Sources */,
 				505F0C482780F9FC0002D978 /* SplashInteractor.swift in Sources */,
+				500BF55627961952008CF9A4 /* Option.swift in Sources */,
 				5087BA1C2781F15600D2DBFE /* Tracking.swift in Sources */,
+				500BF55027961912008CF9A4 /* PlayerSettingsUIModel.swift in Sources */,
 				505F0C02277FE3020002D978 /* ChannelsContract.swift in Sources */,
+				500BF4FF279603F9008CF9A4 /* AVPlayerItem+Extension.swift in Sources */,
 				505F0C08277FE3020002D978 /* ChannelsRouter.swift in Sources */,
 				505F0C442780F9FC0002D978 /* SplashContract.swift in Sources */,
+				50BF9DDC27935CFD003FFAE0 /* StreamSettingsOptionsViewController.swift in Sources */,
 				505F0C1A277FE75C0002D978 /* GroupCell.swift in Sources */,
 				505F0BDB277FDADB0002D978 /* ChannelsRemoteServiceProtocol.swift in Sources */,
 				508ABA32278117EC00EF6C82 /* UIView+Gradient.swift in Sources */,
+				50BF9DDB27935CFD003FFAE0 /* StreamSettingsOptionsPresenter.swift in Sources */,
 				50E47D22278E4AEE00154D9F /* StreamContainerViewModel.swift in Sources */,
 				508A54DB277F56F6007AC357 /* StreamSessionRemoteService.swift in Sources */,
 				508A5510277F585D007AC357 /* Environment.swift in Sources */,
@@ -1389,6 +1710,7 @@
 				50D38C9127814D2C0010D89A /* UIView+Shadow.swift in Sources */,
 				50E47D3D278E4BF900154D9F /* UIViewController+Present.swift in Sources */,
 				505F0C432780F9FC0002D978 /* SplashViewModel.swift in Sources */,
+				500BF4F127960338008CF9A4 /* AVAsset+RxExtension.swift in Sources */,
 				505F0C04277FE3020002D978 /* ChannelsViewController.swift in Sources */,
 				505F0B38277FC0E10002D978 /* Service.swift in Sources */,
 				505F0B47277FC4870002D978 /* StreamSessionServiceError.swift in Sources */,
@@ -1397,6 +1719,8 @@
 				50AFD07927826017001B2C84 /* StreamPresenter.swift in Sources */,
 				505F0C07277FE3020002D978 /* ChannelsLocalizatedStrings.swift in Sources */,
 				505F0B33277FC0C50002D978 /* Product.swift in Sources */,
+				50B509CB2792494500023BA2 /* StreamSettingsContract.swift in Sources */,
+				50B509CA2792494500023BA2 /* StreamSettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

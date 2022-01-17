@@ -22,3 +22,7 @@ struct Quality: Codable {
         case drmRequired = "drm_required"
     }
 }
+
+extension Quality: Equatable {
+    
+}

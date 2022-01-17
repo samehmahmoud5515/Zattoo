@@ -18,7 +18,7 @@ extension UIView {
     
     @discardableResult func gradientBackground(from color1: UIColor, to color2: UIColor, direction: GradientDirection) -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
-        let frame = CGRect(origin: bounds.origin, size: bounds.size)
+        let frame = CGRect(origin: bounds.origin, size: UIScreen.main.bounds.size)
         gradientLayer.frame = frame
         gradientLayer.colors = [color1.cgColor, color2.cgColor]
 

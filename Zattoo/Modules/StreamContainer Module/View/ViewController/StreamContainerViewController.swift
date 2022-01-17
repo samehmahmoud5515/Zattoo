@@ -8,16 +8,18 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 class StreamContainerViewController: UIViewController, StreamContainerViewControllerProtocol {
     
     // MARK: - Outlets
-    @IBOutlet weak var streamOverlayView: StreamOverlayView!
+    @IBOutlet weak var streamOverlayView: StreamControlsView!
+    @IBOutlet weak var streamOverlayContainerView: UIView!
     
     // MARK: - Attributes
 	var presenter: StreamContainerPresenterProtocol!
     let disposeBag = DisposeBag()
-    let playerViewTapGesture = UITapGestureRecognizer()
+    let viewTapGesture = UITapGestureRecognizer()
 
     // MARK: -  View Life Cycle
     override func viewDidLoad() {
@@ -35,20 +37,15 @@ class StreamContainerViewController: UIViewController, StreamContainerViewContro
 extension StreamContainerViewController {
     
     func setupUI() {
-        addStreamViewController()
         setupStreamOverlayView()
     }
     
-    func addStreamViewController() {
-        presenter.addStream(to: view)
-    }
-    
     func setupStreamOverlayView() {
-        view.bringSubviewToFront(streamOverlayView)
+        view.bringSubviewToFront(streamOverlayContainerView)
     }
 }
 
-// MARK: - Display
+// MARK: -
 extension StreamContainerViewController {
     func showLoadingIndicator(isLoading: Bool) {
         isLoading ?
@@ -57,17 +54,21 @@ extension StreamContainerViewController {
     }
     
     func addPlayerViewTapGesture() {
-        view.addGestureRecognizer(playerViewTapGesture)
+        streamOverlayContainerView.addGestureRecognizer(viewTapGesture)
     }
 }
 
+// MARK: - UIBinding
 extension StreamContainerViewController {
     
     func configureUIBinding() {
         bindCloseButtonTap()
         bindResizeButtonTap()
+        bindSettingsButtonTap()
         bindPlayerViewTapGesture()
         bindShowingLoadingIndicatorWithPlayerState()
+        bindBitRateLabelText()
+        bindCurrentPlaybackPositionLabelText()
     }
     
     func bindCloseButtonTap() {
@@ -82,10 +83,17 @@ extension StreamContainerViewController {
             .disposed(by: disposeBag)
     }
     
+    func bindSettingsButtonTap() {
+        streamOverlayView.settingsButton.rx.tap
+            .bind(to: presenter.viewModel.settingsButtonDidTapped)
+            .disposed(by: disposeBag)
+    }
+    
     func bindPlayerViewTapGesture() {
-        playerViewTapGesture.rx.event.bind(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            self.streamOverlayView.isHidden = !self.streamOverlayView.isHidden
+        viewTapGesture.rx.event
+            .bind(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.streamOverlayView.isHidden = !self.streamOverlayView.isHidden
         }).disposed(by: disposeBag)
     }
     
@@ -104,5 +112,25 @@ extension StreamContainerViewController {
             })
             .subscribe()
             .disposed(by: disposeBag)
+    }
+    
+    func bindBitRateLabelText() {
+        presenter.viewModel.currentResolution
+            .bind(to: streamOverlayView.bitRateLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    func bindCurrentPlaybackPositionLabelText() {
+        let player = presenter.viewModel.player
+        player.rx
+            .periodicTimeObserver(timeInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main)
+            .flatMap { _ in player.rx.currentItem }
+            .filter { $0?.status == .readyToPlay }
+            .compactMap { $0?.currentTime() }
+            .bind { [weak self] currentTime in
+                let currentTimeInSeconds = Int(CMTimeGetSeconds(currentTime))
+                let formatedTime = String(format: "%02d:%02d", currentTimeInSeconds / 60, currentTimeInSeconds % 60 )
+                self?.streamOverlayView.currentPlaybackPositionLabel.text = formatedTime
+            }.disposed(by: disposeBag)
     }
 }

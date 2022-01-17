@@ -14,6 +14,7 @@ struct StreamContainerViewModel {
     let player = AVPlayer()
     let closeButtonDidTapped = PublishRelay<()>()
     let resizeButtonDidTapped = PublishRelay<()>()
+    let settingsButtonDidTapped = PublishRelay<()>()
     
     let videoGravities: [AVLayerVideoGravity] = [.resize, .resizeAspect, .resizeAspectFill]
     var selectedVideoGravityIndex = BehaviorSubject<Int>(value: 1)
@@ -26,4 +27,5 @@ struct StreamContainerViewModel {
             }
             .map { videoGravities[$0] }
     }
+    var currentResolution = BehaviorRelay<String>(value: "")
 }

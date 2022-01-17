@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,27 +9,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StreamContainerViewController" customModule="Zattoo" customModuleProvider="target">
             <connections>
+                <outlet property="streamOverlayContainerView" destination="yi1-jD-i8o" id="1Jb-Wg-8as"/>
                 <outlet property="streamOverlayView" destination="vna-vl-VDX" id="4r4-jz-x4N"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vna-vl-VDX" customClass="StreamOverlayView" customModule="Zattoo" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yi1-jD-i8o">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vna-vl-VDX" customClass="StreamControlsView" customModule="Zattoo" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="vna-vl-VDX" secondAttribute="trailing" id="AMT-zr-bdr"/>
+                        <constraint firstAttribute="bottom" secondItem="vna-vl-VDX" secondAttribute="bottom" id="R08-vH-EbC"/>
+                        <constraint firstItem="vna-vl-VDX" firstAttribute="leading" secondItem="yi1-jD-i8o" secondAttribute="leading" id="iyQ-cL-745"/>
+                        <constraint firstItem="vna-vl-VDX" firstAttribute="top" secondItem="yi1-jD-i8o" secondAttribute="top" id="l2A-SN-r2z"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="X7N-Pr-aL5"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vna-vl-VDX" firstAttribute="top" secondItem="X7N-Pr-aL5" secondAttribute="top" id="4BB-su-dF8"/>
-                <constraint firstItem="X7N-Pr-aL5" firstAttribute="bottom" secondItem="vna-vl-VDX" secondAttribute="bottom" id="I1X-hY-qp1"/>
-                <constraint firstItem="vna-vl-VDX" firstAttribute="leading" secondItem="X7N-Pr-aL5" secondAttribute="leading" id="mJb-S1-RIQ"/>
-                <constraint firstItem="X7N-Pr-aL5" firstAttribute="trailing" secondItem="vna-vl-VDX" secondAttribute="trailing" id="oXW-Ml-Xlu"/>
+                <constraint firstItem="yi1-jD-i8o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6ee-MT-fp6"/>
+                <constraint firstAttribute="trailing" secondItem="yi1-jD-i8o" secondAttribute="trailing" id="Rfe-oK-oeS"/>
+                <constraint firstAttribute="bottom" secondItem="yi1-jD-i8o" secondAttribute="bottom" id="TSs-wA-MiQ"/>
+                <constraint firstItem="yi1-jD-i8o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WWs-nM-157"/>
             </constraints>
             <point key="canvasLocation" x="-26" y="101"/>
         </view>

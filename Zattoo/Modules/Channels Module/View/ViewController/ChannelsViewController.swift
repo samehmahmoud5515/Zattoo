@@ -19,10 +19,8 @@ class ChannelsViewController: UIViewController, ChannelsViewControllerProtocol {
     // MARK: - Attributes
     var presenter: ChannelsPresenterProtocol!
     let disposeBag = DisposeBag()
-    var numberOfRowsForChannels: CGFloat {
-        return UIDevice.current.orientation.isLandscape ? 4 : 2
-    }
-    var channelCellHeight: CGFloat = 200
+    var numberOfRowsForChannels: CGFloat = 2
+    let channelCellHeight: CGFloat = 200
     
     // MARK: -  View Life Cycle
     override func viewDidLoad() {
@@ -169,15 +167,16 @@ extension ChannelsViewController: UICollectionViewDelegateFlowLayout {
             flowLayout.minimumInteritemSpacing *
             CGFloat(numberOfRowsForChannels - 1)
         
-        let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(numberOfRowsForChannels)).rounded(.down)
+        let itemWidth = ((channelsCollectionView.frame.width - marginsAndInsets) / CGFloat(numberOfRowsForChannels)).rounded(.down)
         return CGSize(width: itemWidth, height: channelCellHeight)
     }
 }
 
 // MARK: - Transition
 extension ChannelsViewController {
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        channelsCollectionView.reloadData()
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        numberOfRowsForChannels = traitCollection.verticalSizeClass == .compact ? 4 : 2
+        channelsCollectionView.collectionViewLayout.invalidateLayout()
     }
 }
