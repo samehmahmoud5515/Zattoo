@@ -83,8 +83,8 @@ class StreamContainerPresenter: StreamContainerPresenterProtocol {
                 }
                 if quality == .auto && presentationSizeResolution > 0 {
                     self?.viewModel.currentResolution.accept("Auto(\(presentationSizeResolution))")
-                } else {
-                    self?.viewModel.currentResolution.accept("\(quality.heightResolution)p")
+                } else if quality.heightResolution > 0 {
+                    self?.viewModel.currentResolution.accept("\(quality.heightResolution)")
                 }
             }
             .subscribe()

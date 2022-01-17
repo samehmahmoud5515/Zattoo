@@ -79,7 +79,8 @@ extension StreamSettingsViewController {
     func bindTableViewDataSource() {
         presenter.viewModel.dataSource
             .bind(to: tableView.rx.items(cellIdentifier: "\(StreamSettingsCell.self)", cellType: StreamSettingsCell.self)) { [weak self] row, item, cell in
-                self?.configure(cell: cell, with: item)
+                guard let viewModel = self?.presenter.viewModel else { return }
+                cell.configure(with: item, title: viewModel.localize(setting: item), icon: viewModel.image(for: item))
             }.disposed(by: disposeBag)
     }
     
@@ -95,67 +96,5 @@ extension StreamSettingsViewController {
             })
             .subscribe()
             .disposed(by: disposeBag)
-    }
-}
-
-extension StreamSettingsViewController {
-    private func configure(cell: StreamSettingsCell, with setting: PlayerSettingsUIModel) {
-        guard let viewModel = presenter?.viewModel
-        else { return }
-        
-        cell.titleLbl.text = viewModel.localize(setting: setting)
-        
-        //cell.iconImgView.image = viewModel.image(for: setting)
-        cell.contentView.alpha = setting.enabled ? 1.0 : 0.5
-        
-        switch setting {
-        case let .quality(quality, _, _):
-            
-            var resolutionText = .auto == quality ? "Auto" : quality.name
-            let lastIndex = resolutionText.count
-
-            if quality.heightResolution >= VideoQuality.hd.heightResolution {
-                resolutionText.append("HD")
-                cell.valueLbl.setAttributedTextWithSubscripts(text: resolutionText,
-                                                              indicesOfSubscripts: [lastIndex ,
-                                                                                    lastIndex + 1], color: .red)
-            }
-            else {
-                cell.valueLbl.text = resolutionText
-            }
-            
-        case let .audio(name, _):
-            displaySettingOption(name, cell)
-        case let .subtitle(name, _):
-            displaySettingOption(name, cell)
-        }
-    }
-
-    private func displaySettingOption(_ name: Option<String>, _ cell: StreamSettingsCell) {
-
-        switch name {
-        case let .value(value):
-            cell.valueLbl.text = value
-        case .none:
-            cell.valueLbl.text = "None"
-        }
-    }
-}
-
-extension UILabel {
-    func setAttributedTextWithSubscripts(text: String, indicesOfSubscripts: [Int], color: UIColor) {
-        let font = self.font!
-        let subscriptFont = font.withSize(font.pointSize * 0.7)
-        let subscriptOffset = font.pointSize * 0.3
-        let attributedString = NSMutableAttributedString(string: text,
-                                                         attributes: [.font : font])
-        for index in indicesOfSubscripts {
-            let range = NSRange(location: index, length: 1)
-            attributedString.setAttributes([.font: subscriptFont,
-                                            .baselineOffset: subscriptOffset,
-                                            .foregroundColor: color],
-                                           range: range)
-        }
-        self.attributedText = attributedString
     }
 }

@@ -27,15 +27,15 @@ extension OptionCell {
     func configure(_ item: PlayerSettingsUIModel)  {
         
         switch item {
-        case .quality(let quality, _, _):
+        case let .quality(quality, resoulution, _):
             if quality == .auto {
                 updateUI(with: "Auto", item.enabled)
             } else {
-                updateUI(with: quality.name, item.enabled)
+                updateUI(with: "\(quality.name)(\(resoulution))", item.enabled)
             }
-        case .audio(let option, _):
+        case let .audio(option, _):
             updateUI(with: option.value, item.enabled)
-        case .subtitle(let option, _):
+        case let .subtitle(option, _):
             updateUI(with: option.value, item.enabled)
         }
     }

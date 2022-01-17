@@ -14,8 +14,8 @@
 		500BF55027961912008CF9A4 /* PlayerSettingsUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF54F27961912008CF9A4 /* PlayerSettingsUIModel.swift */; };
 		500BF55627961952008CF9A4 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF55527961952008CF9A4 /* Option.swift */; };
 		500BF55C2796196C008CF9A4 /* VideoQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF55B2796196C008CF9A4 /* VideoQuality.swift */; };
+		500BF5692796253B008CF9A4 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BF5682796253B008CF9A4 /* UILabel+Extensions.swift */; };
 		5046A1FD2777C6F30070FB54 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5046A1FC2777C6F30070FB54 /* APIService.swift */; };
-		5048810A2794E8B7003763F1 /* GradiantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504881092794E8B7003763F1 /* GradiantView.swift */; };
 		505F0B13277FBE890002D978 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F0B12277FBE890002D978 /* SessionResponse.swift */; };
 		505F0B1F277FBEB30002D978 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F0B1E277FBEB30002D978 /* Session.swift */; };
 		505F0B24277FBFAE0002D978 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505F0B23277FBFAE0002D978 /* LoginResponse.swift */; };
@@ -151,8 +151,8 @@
 		500BF54F27961912008CF9A4 /* PlayerSettingsUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSettingsUIModel.swift; sourceTree = "<group>"; };
 		500BF55527961952008CF9A4 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		500BF55B2796196C008CF9A4 /* VideoQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoQuality.swift; sourceTree = "<group>"; };
+		500BF5682796253B008CF9A4 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		5046A1FC2777C6F30070FB54 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		504881092794E8B7003763F1 /* GradiantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradiantView.swift; sourceTree = "<group>"; };
 		505F0B12277FBE890002D978 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		505F0B1E277FBEB30002D978 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		505F0B23277FBFAE0002D978 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -353,6 +353,25 @@
 				500BF55B2796196C008CF9A4 /* VideoQuality.swift */,
 			);
 			path = VideoQuality;
+			sourceTree = "<group>";
+		};
+		500BF5602796251F008CF9A4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				500BF5672796252D008CF9A4 /* UILabel */,
+				50E47D3B278E4BEB00154D9F /* UIViewController */,
+				50AFD00B2781F39D001B2C84 /* UIColor */,
+				508ABA2827810EEA00EF6C82 /* UIView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		500BF5672796252D008CF9A4 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				500BF5682796253B008CF9A4 /* UILabel+Extensions.swift */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		5046A1752777C4040070FB54 /* Modules */ = {
@@ -889,11 +908,9 @@
 		508ABA2727810EE400EF6C82 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				50E47D3B278E4BEB00154D9F /* UIViewController */,
 				50F17F18278D130E006CFE72 /* AVAudioSession */,
 				500BF4EB27960314008CF9A4 /* AVFoundation */,
-				50AFD00B2781F39D001B2C84 /* UIColor */,
-				508ABA2827810EEA00EF6C82 /* UIView */,
+				500BF5602796251F008CF9A4 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -947,7 +964,6 @@
 			children = (
 				5092548F278CE87D0042F36D /* StreamControlsView.swift */,
 				50925490278CE87D0042F36D /* StreamControlsView.xib */,
-				504881092794E8B7003763F1 /* GradiantView.swift */,
 			);
 			path = StreamOverlayView;
 			sourceTree = "<group>";
@@ -1644,7 +1660,6 @@
 				50E47D26278E4AEE00154D9F /* StreamContainerViewController.swift in Sources */,
 				505F0B42277FC10D0002D978 /* UserType.swift in Sources */,
 				505F0C25277FE7770002D978 /* ChannelCell.swift in Sources */,
-				5048810A2794E8B7003763F1 /* GradiantView.swift in Sources */,
 				50B509CF2792494500023BA2 /* StreamSettingsInteractor.swift in Sources */,
 				505F0B75277FCE990002D978 /* StreamSessionLocalServiceProtocol.swift in Sources */,
 				505F0C452780F9FC0002D978 /* SplashPresenter.swift in Sources */,
@@ -1714,6 +1729,7 @@
 				505F0C04277FE3020002D978 /* ChannelsViewController.swift in Sources */,
 				505F0B38277FC0E10002D978 /* Service.swift in Sources */,
 				505F0B47277FC4870002D978 /* StreamSessionServiceError.swift in Sources */,
+				500BF5692796253B008CF9A4 /* UILabel+Extensions.swift in Sources */,
 				508A54F0277F5737007AC357 /* StreamSessionEndPoint.swift in Sources */,
 				505F0BD3277FDAD10002D978 /* ChannelsRemoteService.swift in Sources */,
 				50AFD07927826017001B2C84 /* StreamPresenter.swift in Sources */,

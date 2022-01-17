@@ -19,7 +19,6 @@ struct StreamSettingsViewModel {
 
 extension StreamSettingsViewModel {
     func localize(setting: PlayerSettingsUIModel) -> String {
-        
         switch setting {
         case .quality: return "Quality"
         case .audio: return "Audio"
@@ -29,9 +28,9 @@ extension StreamSettingsViewModel {
         
     func image(for setting: PlayerSettingsUIModel) -> UIImage? {
         switch setting {
-        case .quality: return UIImage(named: "live-stream-settings-quality")
-        case .audio: return UIImage(named: "live-stream-settings-audio")
-        case .subtitle: return UIImage(named: "live-stream-settings-subtitle")
+        case .quality: return UIImage(systemName: "4k.tv.fill")
+        case .audio: return UIImage(systemName: "speaker.zzz.fill")
+        case .subtitle: return UIImage(systemName: "text.bubble.fill")
         }
     }
 }

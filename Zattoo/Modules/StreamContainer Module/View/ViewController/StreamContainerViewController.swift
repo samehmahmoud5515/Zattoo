@@ -19,13 +19,13 @@ class StreamContainerViewController: UIViewController, StreamContainerViewContro
     // MARK: - Attributes
 	var presenter: StreamContainerPresenterProtocol!
     let disposeBag = DisposeBag()
-    let viewTapGesture = UITapGestureRecognizer()
+    let viewSingleTapGesture = UITapGestureRecognizer()
 
     // MARK: -  View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-        addPlayerViewTapGesture()
+        addStreamContainerViewGestures()
     }
     
     deinit {
@@ -42,6 +42,8 @@ extension StreamContainerViewController {
     
     func setupStreamOverlayView() {
         view.bringSubviewToFront(streamOverlayContainerView)
+        streamOverlayView.bitRateLabel.text = ""
+        streamOverlayView.currentPlaybackPositionLabel.text = ""
     }
 }
 
@@ -53,8 +55,8 @@ extension StreamContainerViewController {
             streamOverlayView.activityIndicator.stopAnimating()
     }
     
-    func addPlayerViewTapGesture() {
-        streamOverlayContainerView.addGestureRecognizer(viewTapGesture)
+    func addStreamContainerViewGestures() {
+        streamOverlayContainerView.addGestureRecognizer(viewSingleTapGesture)
     }
 }
 
@@ -65,7 +67,7 @@ extension StreamContainerViewController {
         bindCloseButtonTap()
         bindResizeButtonTap()
         bindSettingsButtonTap()
-        bindPlayerViewTapGesture()
+        bindPlayerViewSingleTapGesture()
         bindShowingLoadingIndicatorWithPlayerState()
         bindBitRateLabelText()
         bindCurrentPlaybackPositionLabelText()
@@ -89,8 +91,8 @@ extension StreamContainerViewController {
             .disposed(by: disposeBag)
     }
     
-    func bindPlayerViewTapGesture() {
-        viewTapGesture.rx.event
+    func bindPlayerViewSingleTapGesture() {
+        viewSingleTapGesture.rx.event
             .bind(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.streamOverlayView.isHidden = !self.streamOverlayView.isHidden
